@@ -72,6 +72,4 @@ jobs:
                   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
                   GOARCH: amd64
                   GOOS: windows
-ets = ["GITHUB_TOKEN"]
-}
 ```
