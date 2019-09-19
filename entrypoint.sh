@@ -19,7 +19,7 @@ if [ $GOOS == 'windows' ]; then
 fi
 
 tar cvfz tmp.tgz "${PROJECT_NAME}${EXT}"
-CHECKSUM=$(md5sum tmp.tgz | cut -d ' ' -f 1)
+CHECKSUM=$(sha256sum tmp.tgz | cut -d ' ' -f 1)
 
 curl \
   -X POST \
