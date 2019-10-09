@@ -1,6 +1,7 @@
 # Go Release Binary GitHub Action
 
-Automate publishing Go build artifacts for GitHub releases through GitHub Actions
+Automate publishing Go build artifacts for GitHub releases through GitHub Actions.
+You can compile with the ldflags parameters by initializing the environment variable `LDFLAGS` with the desired value. 
 
 ```yaml
 on: release
