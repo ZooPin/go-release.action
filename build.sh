@@ -12,7 +12,7 @@ go get -v ./...
 
 if [[ -v  LDFLAGS  ]]
 then
-    go build -ldflags $LDFLAGS
+    go build -ldflags $LDFLAGS $BUILDPATH
 else
-    go build
+    go build $BUILDPATH
 fi

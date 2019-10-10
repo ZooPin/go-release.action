@@ -1,7 +1,13 @@
 # Go Release Binary GitHub Action
 
 Automate publishing Go build artifacts for GitHub releases through GitHub Actions.
-You can compile with the ldflags parameters by initializing the environment variable `LDFLAGS` with the desired value. 
+
+## Customization
+
+There are 2 environnement variable that you can use to customize your build
+
+* `LDFLAGS` : Set a ldflags for compilation like `"-X main.xyz=abc"`
+* `BUILDPATH` : Set a custom path for your file to compile like `cmd/project/main.go`
 
 ```yaml
 on: release
@@ -18,6 +24,8 @@ jobs:
                   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
                   GOARCH: "386"
                   GOOS: linux
+                  BUILDPATH: cmd/project/main.go
+                  LDFLAGS: "-X main.xyz=abc"
     release-linux-amd64:
         name: release linux/amd64
         runs-on: ubuntu-latest
@@ -74,3 +82,5 @@ jobs:
                   GOARCH: amd64
                   GOOS: windows
 ```
+
+Thanks to [usk81](https://github.com/usk81) for the workflow syntax in yaml.
